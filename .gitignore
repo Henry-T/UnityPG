@@ -13,6 +13,9 @@ name.txt
 result.txt
 Library
 .svn
+Assembly-CSharp.csproj
+Assembly-CSharp-vs.csproj
+*-csharp.sln
 
 *.DotSettings
 BackgroundWorker.cs
