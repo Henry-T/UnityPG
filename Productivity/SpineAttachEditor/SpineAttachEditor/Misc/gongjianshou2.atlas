@@ -1,0 +1,223 @@
+
+gongjianshou2.png
+size: 1022,254
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+1
+  rotate: true
+  xy: 44, 31
+  size: 223, 207
+  orig: 228, 215
+  offset: 2, 4
+  index: -1
+2
+  rotate: true
+  xy: 253, 42
+  size: 212, 196
+  orig: 228, 215
+  offset: 6, 10
+  index: -1
+3
+  rotate: true
+  xy: 451, 57
+  size: 197, 177
+  orig: 228, 215
+  offset: 12, 20
+  index: -1
+4
+  rotate: true
+  xy: 630, 110
+  size: 144, 113
+  orig: 228, 215
+  offset: 22, 51
+  index: -1
+5
+  rotate: true
+  xy: 883, 142
+  size: 78, 64
+  orig: 228, 215
+  offset: 69, 82
+  index: -1
+6
+  rotate: false
+  xy: 949, 161
+  size: 68, 59
+  orig: 228, 215
+  offset: 81, 86
+  index: -1
+gong2_beida
+  rotate: false
+  xy: 623, 22
+  size: 29, 33
+  orig: 31, 33
+  offset: 2, 0
+  index: -1
+gong2_bozi
+  rotate: false
+  xy: 177, 5
+  size: 30, 24
+  orig: 30, 24
+  offset: 0, 0
+  index: -1
+gong2_gong
+  rotate: false
+  xy: 745, 114
+  size: 136, 140
+  orig: 136, 140
+  offset: 0, 0
+  index: -1
+gong2_houbai
+  rotate: true
+  xy: 209, 9
+  size: 20, 36
+  orig: 20, 36
+  offset: 0, 0
+  index: -1
+gong2_jian
+  rotate: false
+  xy: 733, 10
+  size: 95, 98
+  orig: 95, 98
+  offset: 0, 0
+  index: -1
+gong2_jian_beihou
+  rotate: true
+  xy: 362, 5
+  size: 35, 43
+  orig: 35, 43
+  offset: 0, 0
+  index: -1
+gong2_jiantong
+  rotate: true
+  xy: 912, 222
+  size: 32, 79
+  orig: 32, 79
+  offset: 0, 0
+  index: -1
+gong2_qianfa
+  rotate: false
+  xy: 117, 2
+  size: 7, 27
+  orig: 7, 27
+  offset: 0, 0
+  index: -1
+gong2_qiang
+  rotate: false
+  xy: 2, 7
+  size: 40, 247
+  orig: 40, 247
+  offset: 0, 0
+  index: -1
+gong2_qugan
+  rotate: true
+  xy: 263, 2
+  size: 38, 49
+  orig: 38, 49
+  offset: 0, 0
+  index: -1
+gong2_qunbai
+  rotate: true
+  xy: 520, 2
+  size: 53, 33
+  orig: 53, 33
+  offset: 0, 0
+  index: -1
+gong2_tou
+  rotate: false
+  xy: 949, 98
+  size: 64, 61
+  orig: 64, 61
+  offset: 0, 0
+  index: -1
+gong2_toukui
+  rotate: true
+  xy: 830, 22
+  size: 90, 80
+  orig: 90, 80
+  offset: 0, 0
+  index: -1
+gong2_xian
+  rotate: false
+  xy: 654, 26
+  size: 77, 82
+  orig: 77, 82
+  offset: 0, 0
+  index: -1
+gong2_yingzi
+  rotate: false
+  xy: 407, 6
+  size: 111, 34
+  orig: 111, 34
+  offset: 0, 0
+  index: -1
+gong2_youdabi
+  rotate: true
+  xy: 314, 3
+  size: 37, 46
+  orig: 37, 46
+  offset: 0, 0
+  index: -1
+gong2_youdatui
+  rotate: true
+  xy: 623, 3
+  size: 17, 57
+  orig: 17, 57
+  offset: 0, 0
+  index: -1
+gong2_youjiao
+  rotate: true
+  xy: 247, 10
+  size: 19, 14
+  orig: 19, 14
+  offset: 0, 0
+  index: -1
+gong2_youshou
+  rotate: false
+  xy: 555, 10
+  size: 31, 45
+  orig: 31, 45
+  offset: 0, 0
+  index: -1
+gong2_youxiaotui
+  rotate: true
+  xy: 83, 2
+  size: 27, 32
+  orig: 27, 32
+  offset: 0, 0
+  index: -1
+gong2_zuodabi
+  rotate: false
+  xy: 588, 16
+  size: 33, 39
+  orig: 33, 39
+  offset: 0, 0
+  index: -1
+gong2_zuodatui
+  rotate: true
+  xy: 126, 4
+  size: 25, 32
+  orig: 25, 32
+  offset: 0, 0
+  index: -1
+gong2_zuojiao
+  rotate: true
+  xy: 160, 4
+  size: 25, 15
+  orig: 25, 15
+  offset: 0, 0
+  index: -1
+gong2_zuoshou
+  rotate: false
+  xy: 993, 226
+  size: 29, 28
+  orig: 29, 28
+  offset: 0, 0
+  index: -1
+gong2_zuoxiaotui
+  rotate: true
+  xy: 44, 2
+  size: 27, 37
+  orig: 27, 37
+  offset: 0, 0
+  index: -1

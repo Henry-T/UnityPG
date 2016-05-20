@@ -1,0 +1,23 @@
+Unity3d MenuItem 可以加Valid函数
+
+函数..
+SceneView.RepaintAll();
+
+File.GetFileNameWithoutExtension
+
+StringReader 是干嘛的?
+
+Texture2D.Apply()
+
+U3D启动其他进程
+  Process wunder = new Process();
+        wunder.StartInfo.FileName = "calc";
+        wunder.Start();
+        wunder.WaitForExit();
+        UnityEngine.Debug.Log("Done!");
+
+
+如何指定 Console App 返回值
+方法 1 将main函数返回值改为int 直接return
+
+方法 2 Environment.Exit(code).

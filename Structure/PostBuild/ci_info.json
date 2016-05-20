@@ -1,0 +1,12 @@
+{
+    "name":"PostBuild",
+    "readName":"生成后事件测试",
+    "type": "Structure",
+    "desc": "生成后事件测试",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

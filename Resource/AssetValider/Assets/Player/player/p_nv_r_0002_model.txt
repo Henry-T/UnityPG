@@ -1,0 +1,16 @@
+stand:0-30
+idle:43-73
+walk:76-116
+run:119-139
+attackA:142-160
+attackB:179-198
+attackC:210-237
+attackD:247-296
+hit:297-317
+die:318-365
+magicA:370-420
+magicB:421-441
+magicC:442-492
+atkendA:161-177
+atkendB:199-209
+atkendC:238-246

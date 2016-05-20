@@ -1,0 +1,16 @@
+UnityEngine		= luanet.UnityEngine
+Debug			= UnityEngine.Debug
+
+luanet.load_assembly("Assembly-CSharp")
+ETest  			= luanet.ETest
+
+
+function Awake()
+	Debug.Log("========= EnumType Test ========")
+
+	enumReceiver:LogEnum(ETest.One)
+	enumReceiver:LogEnum(ETest.Two)
+	enumReceiver:LogEnum(ETest.Three)
+
+	Debug.Log("--------- EnumType Test End ---------");
+end

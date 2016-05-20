@@ -1,0 +1,12 @@
+{
+    "name":"MinimapFromScene",
+    "readName":"实时小地图",
+    "type": "Render",
+    "desc": "场景动态小地图",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

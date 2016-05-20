@@ -1,0 +1,12 @@
+{
+    "name":"RuntimeFileTexture",
+    "readName": "运行时文件纹理加载",
+    "type": "Resource",
+    "desc": "运行时从文件加载纹理",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

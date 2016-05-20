@@ -1,0 +1,12 @@
+﻿<Window x:Class="ConfigEditor.PG.TwoWayIntList"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TwoWayIntList" Height="300" Width="300">
+    <Grid>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Height="249" Margin="10,10,0,0" VerticalAlignment="Top" Width="272">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="值" Binding="{Binding .}" />
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

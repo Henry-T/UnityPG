@@ -1,0 +1,13 @@
+﻿<Window x:Class="ConfigEditor.CustomDataGrid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="CustomDataGrid" Height="300" Width="524">
+    <Grid>
+        <DataGrid x:Name="grid" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="222" Width="496">
+            <DataGrid.Columns>
+                <DataGridComboBoxColumn Header="品格1" TextBinding="{Binding [0]}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

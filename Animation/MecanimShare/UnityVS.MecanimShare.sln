@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.MecanimShare.CSharp.Editor", "UnityVS.MecanimShare.CSharp.Editor.csproj", "{A81A5296-DB0D-8BF4-9982-8F2AF8B0D0E3}"
+EndProject
+Project("{1FAC5C55-277D-4884-94A4-83DBDAF57E56}") = "UnityVS.MecanimShare.UnityScript", "UnityVS.MecanimShare.UnityScript.unityproj", "{CEB1AA2F-FE85-F316-B7D3-5A2C6AA85CC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.MecanimShare.CSharp", "UnityVS.MecanimShare.CSharp.csproj", "{FED9D06A-7F89-C41C-A69B-BACCE24AA15D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A81A5296-DB0D-8BF4-9982-8F2AF8B0D0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81A5296-DB0D-8BF4-9982-8F2AF8B0D0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81A5296-DB0D-8BF4-9982-8F2AF8B0D0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81A5296-DB0D-8BF4-9982-8F2AF8B0D0E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB1AA2F-FE85-F316-B7D3-5A2C6AA85CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB1AA2F-FE85-F316-B7D3-5A2C6AA85CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB1AA2F-FE85-F316-B7D3-5A2C6AA85CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB1AA2F-FE85-F316-B7D3-5A2C6AA85CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FED9D06A-7F89-C41C-A69B-BACCE24AA15D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FED9D06A-7F89-C41C-A69B-BACCE24AA15D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FED9D06A-7F89-C41C-A69B-BACCE24AA15D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FED9D06A-7F89-C41C-A69B-BACCE24AA15D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

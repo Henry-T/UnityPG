@@ -1,0 +1,12 @@
+{
+    "name":"Quaternion",
+    "readName":"四元数",
+    "type": "Math",
+    "desc": "四元数理解测试",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

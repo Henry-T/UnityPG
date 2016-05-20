@@ -1,0 +1,23 @@
+﻿THANK YOU FOR PURCHASING CINEMA MO CAP!
+
+FOR FULL INSTRUCTION ON HOW TO USE CINEMA MO CAP - REFER TO DOCUMENTATION INCLUDED IN THE UNITY PACKAGE
+
+You MUST install the Micrsoft Kinect SDK before you can run this application!
+
+1. Download the Microsoft Kinect® SDK at the following location:
+
+	http://www.microsoft.com/en-ca/download/confirmation.aspx?id=40278
+
+2.	Make sure your Kinect® is UNPLUGGED FROM YOUR COMPUTER.  This is very important.  If this step is not done, the Kinect® drivers will not properly install.
+
+3.	Run the executable file.  The SDK process is a one button install, simply accept the license terms and click the install button.
+
+4.	Click Close when prompted.  Note: you do not need to install the Developer Toolkit.
+
+5.	For install instructions from Microsoft, see the following link:
+	http://msdn.microsoft.com/en-us/library/hh855354.aspx#Installation
+
+Thank you!
+The Cinema Suite Team
+support@cinema-suite.com
+

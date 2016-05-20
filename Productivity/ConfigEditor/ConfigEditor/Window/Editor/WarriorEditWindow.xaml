@@ -1,0 +1,293 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ConfigEditor"
+        x:Class="ConfigEditor.WarriorEditWindow"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        Title="ProjectS - 武将编辑器" Height="768" WindowStartupLocation="Manual" Width="1024" Loaded="Window_Loaded" Closing="Window_Closing">
+    <Window.Resources>
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="dgWarrior" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="10,58,0,0" VerticalAlignment="Top" Height="348" Width="996" AutoGenerateColumns="False" SelectionChanged="OnWarriorGridSelChanged" CanUserAddRows="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Name}" Header="武将名"/>
+                <DataGridComboBoxColumn Header="职业" TextBinding="{Binding Profession, Converter={StaticResource Str2EnumConverter}, ConverterParameter={x:Type local:EProfession}}" ItemsSource="{Binding Source={StaticResource ProfessionEnumProvider}}" />
+                <DataGridComboBoxColumn Header="攻击距离" TextBinding="{Binding AttackRange,Converter={StaticResource Str2EnumConverter}, ConverterParameter={x:Type local:EAttackRange}}" ItemsSource="{Binding Source={StaticResource AttackRangeEnumProvider}}" />
+                <DataGridComboBoxColumn Header="普攻属性" TextBinding="{Binding Element, Converter={StaticResource Str2EnumConverter}, ConverterParameter={x:Type local:EElement}}" ItemsSource="{Binding Source={StaticResource ElementEnumProvider}}" />
+                <DataGridTextColumn Header="星级" Binding="{Binding Quality}" ClipboardContentBinding="{x:Null}" />
+                <DataGridComboBoxColumn Header="品格" TextBinding="{Binding Nature, Mode=TwoWay, Converter={StaticResource Str2EnumConverter}, ConverterParameter={x:Type local:ENature}}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                <DataGridTextColumn Header="分组" Binding="{Binding Group}"  />
+                <DataGridComboBoxColumn Header="获得方式" TextBinding="{Binding From, Converter={StaticResource Str2EnumConverter}, ConverterParameter={x:Type local:EWarriorFrom}}" ItemsSource="{Binding Source={local:Enumeration {x:Type local:EWarriorFrom}}}" />
+                <DataGridTextColumn Header="升星后Type" Binding="{Binding NextType}" />
+                <DataGridTemplateColumn Header="编辑传记">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditDescription">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="编辑属性">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditProperty">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="编辑升阶">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditGrade">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="编辑技能">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditSkill">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="迁移Type">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_UpgradeType">迁移</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="拷贝">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_Clone">拷贝</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="删除">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_Delete">删除</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="Type" Binding="{Binding ID}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btnSave" Content="保存" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
+        <TabControl x:Name="tcDetail" HorizontalAlignment="Left" Height="287" Margin="290,411,0,0" VerticalAlignment="Top" Width="716">
+            <TabItem Header="属性">
+                <local:WarriorGrowthUC DataContext="{Binding ElementName=dgWarrior, Path=SelectedItem}" />
+            </TabItem>
+            <TabItem Header="传记">
+                <Grid Background="#FFE5E5E5">
+                    <TextBox x:Name="tbDescription"  AcceptsReturn="false" HorizontalAlignment="Left" Height="194" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="690" Text="{Binding ElementName=dgWarrior, Path=SelectedItem.Description}" />
+                    <Label HorizontalAlignment="Left" Margin="70,209,0,0" VerticalAlignment="Top" Content="{Binding ElementName=tbDescription, Path=Text.Length}"/>
+                    <Label Content="当前字数: " HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="技能">
+                <Grid>
+                    <UserControl x:Name="ucSkill_A" Width="auto" Height="auto" DataContext="{Binding ElementName=dgWarrior, Path=SelectedItem.SkillA, Converter={StaticResource Json2SkillConverter}}">
+                        <Grid>
+                            <Label Content="主动技能 1" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="lbSkillA" HorizontalAlignment="Left" Margin="90,10,0,0" VerticalAlignment="Top" Width="108" Content="{Binding Path=Name, Mode=OneWay}" Height="22"/>
+                            <Button x:Name="btnPreviewSkill1" Tag="1" Content="预览" HorizontalAlignment="Left" Margin="226,13,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_PreviewSkill"/>
+                            <Button Content="更换" HorizontalAlignment="Left" Margin="305,13,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ChangeSkill1"/>
+                            <Button Content="清除" HorizontalAlignment="Left" Margin="384,13,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ClearSkill1"/>
+                        </Grid>
+                    </UserControl>
+                    <UserControl x:Name="ucSkill_B" Width="auto" Height="auto" DataContext="{Binding Mode=OneWay, ElementName=dgWarrior, Path=SelectedItem.SkillB, Converter={StaticResource Json2SkillConverter}}">
+                        <Grid>
+                            <Label Content="主动技能 2" HorizontalAlignment="Left" Margin="10,42,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="lbSkillB" HorizontalAlignment="Left" Margin="90,42,0,0" VerticalAlignment="Top" Width="108" Height="23" Content="{Binding Path=Name, Mode=OneWay}"/>
+                            <Button x:Name="btnPreviewSkill2" Tag="2" Content="预览" HorizontalAlignment="Left" Margin="226,46,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_PreviewSkill"/>
+                            <Button Content="更换" HorizontalAlignment="Left" Margin="305,46,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ChangeSkill2"/>
+                            <Button Content="清除" HorizontalAlignment="Left" Margin="384,46,0,0" VerticalAlignment="Top" Width="74"  Click="onBtn_ClearSkill2"/>
+                        </Grid>
+                    </UserControl>
+                    <UserControl x:Name="ucSkill_C" Width="auto" Height="auto" DataContext="{Binding Mode=OneWay, ElementName=dgWarrior, Path=SelectedItem.SkillC, Converter={StaticResource Json2SkillConverter}}">
+                        <Grid>
+                            <Label Content="被动技能 1" HorizontalAlignment="Left" Margin="10,75,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="lbSkillC" HorizontalAlignment="Left" Margin="90,75,0,0" VerticalAlignment="Top" Width="108" Content="{Binding Path=Name, Mode=OneWay}" Height="22"/>
+                            <Button Content="更换" HorizontalAlignment="Left" Margin="305,78,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ChangeSkill3"/>
+                            <Button Content="清除" HorizontalAlignment="Left" Margin="384,78,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ClearSkill3"/>
+                        </Grid>
+                    </UserControl>
+                    <UserControl x:Name="ucSkill_D" Width="auto" Height="auto" DataContext="{Binding Mode=OneWay, ElementName=dgWarrior, Path=SelectedItem.SkillD, Converter={StaticResource Json2SkillConverter}}">
+                        <Grid>
+                            <Label Content="被动技能 2" HorizontalAlignment="Left" Margin="10,108,0,0" VerticalAlignment="Top"/>
+                            <Label x:Name="lbSkillD" HorizontalAlignment="Left" Margin="90,108,0,0" VerticalAlignment="Top" Width="108" Content="{Binding Path=Name, Mode=OneWay}" Height="22"/>
+                            <Button Content="更换" HorizontalAlignment="Left" Margin="305,111,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ChangeSkill4"/>
+                            <Button Content="清除" HorizontalAlignment="Left" Margin="384,111,0,0" VerticalAlignment="Top" Width="74" Click="onBtn_ClearSkill4"/>
+                        </Grid>
+                    </UserControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="升阶">
+                <Grid>
+                    <DataGrid x:Name="dgGrade" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="147" Width="523" AutoGenerateColumns="False" ItemsSource="{Binding ElementName=dgWarrior, Path=SelectedItem.GradeCondition, Converter={StaticResource Json2GradeConditionConverter}}">
+                        <DataGrid.Columns>
+                            <DataGridComboBoxColumn Header="品格1" TextBinding="{Binding [0].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格2" TextBinding="{Binding [1].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格3" TextBinding="{Binding [2].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格4" TextBinding="{Binding [3].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格5" TextBinding="{Binding [4].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格6" TextBinding="{Binding [5].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格7" TextBinding="{Binding [6].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridComboBoxColumn Header="品格8" TextBinding="{Binding [7].Value}" ItemsSource="{Binding Source={StaticResource NatureEnumProvider}}" />
+                            <DataGridTemplateColumn Header="删除">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button x:Name="btnDeleteGrade" Content="删除" Click="onBtn_DeleteGrade" ></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Grid x:Name="gdGradeSum" HorizontalAlignment="Left" Margin="10,195,0,0" VerticalAlignment="Top" Height="55" Width="523" DataContext="{Binding ElementName=dgGrade, Path=ItemsSource, Mode=OneWay}" Background="#FFE5E5E5" ShowGridLines="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="阶级" Grid.Row="0" Grid.Column="1"></Label>
+                        <Label Content="生命" Grid.Row="0" Grid.Column="2"></Label>
+                        <Label Content="攻击" Grid.Row="0" Grid.Column="3"></Label>
+                        <Label Content="防御" Grid.Row="0" Grid.Column="4"></Label>
+                        <Label Content="速度" Grid.Row="0" Grid.Column="5"></Label>
+                        <Label Content="连击" Grid.Row="0" Grid.Column="6"></Label>
+                        <Label Content="格挡" Grid.Row="0" Grid.Column="7"></Label>
+                        <Label Content="反击" Grid.Row="0" Grid.Column="8"></Label>
+                        <Label Content="暴击" Grid.Row="0" Grid.Column="9"></Label>
+                        <Label Content="爆伤" Grid.Row="0" Grid.Column="10"></Label>
+
+                        <Label Content="满阶属性汇总" Grid.Row="1" Grid.Column="0" />
+
+                        <TextBox x:Name="tbGrade" Grid.Row="3" Grid.Column="1" Text="1"></TextBox>
+
+                        <Label x:Name="tbAddSumHP" Grid.Row="3" Grid.Column="2">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.生命}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="3">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.攻击}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="4">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.防御}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="5">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.速度}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="6">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.连击}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="7">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.格挡}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="8">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.反击}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="9">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.暴击率}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+                        <Label Grid.Row="3" Grid.Column="10">
+                            <Label.Content>
+                                <MultiBinding Mode="OneWay" Converter="{StaticResource GradeConditions2PropSumConverter}">
+                                    <Binding></Binding>
+                                    <Binding ElementName="tbGrade" Path="Text"></Binding>
+                                    <Binding Source="{x:Static local:EAddition.暴击伤害}" />
+                                </MultiBinding>
+                            </Label.Content>
+                        </Label>
+
+                    </Grid>
+                    <Button x:Name="btnSaveGrade" Content="保存" HorizontalAlignment="Left" Margin="226,162,0,0" VerticalAlignment="Top" Width="75" Click="btnSaveGrade_Click"/>
+                    <ListBox x:Name="lstGradePresets" HorizontalAlignment="Left" Height="209" Margin="558,10,0,0" VerticalAlignment="Top" Width="142" ItemsSource="{Binding}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Label Content="{Binding Category}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                    <Button x:Name="btnLoadGradePreset" Content="载入初始值" HorizontalAlignment="Left" Margin="591,224,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_LoadGradePreset"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <UserControl x:Name="ucAvatar" Margin="10,411,731,34" DataContext="{Binding ElementName=dgWarrior, Path=SelectedItem.AvatarType, Converter={StaticResource Type2AvatarConverter}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="形象" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="50" Height="25"/>
+                <Button x:Name="btnProject" Content="{Binding Name}" IsEnabled="{Binding ElementName=dgWarrior, Path=SelectedItem, Converter={StaticResource Obj2NotNullConverter}}" HorizontalAlignment="Left" Margin="48,6,0,0" VerticalAlignment="Top" Width="98" Click="onBtn_PickSpine" Height="19"/>
+            </Grid>
+        </UserControl>
+        <Rectangle x:Name="rtRenderAppHolder" Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="257" Stroke="Black" VerticalAlignment="Top" Width="275" Margin="10,441,0,0"/>
+
+        <Button x:Name="btnNewWarrior" Content="新武将" HorizontalAlignment="Left" Margin="90,34,0,0" VerticalAlignment="Top" Width="75" Click="btnNewWarrior_Click"/>
+
+        <Button Content="错误数: 0" HorizontalAlignment="Left" Margin="10,708,0,0" VerticalAlignment="Top" Width="75" />
+        <local:EditorSwitchUC HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="1024" Height="24" />
+        <local:IDJumperUC HorizontalAlignment="Left" Margin="806,23,0,0" VerticalAlignment="Top" OnJump="IDJumperUC_OnJump"/>
+    </Grid>
+</Window>

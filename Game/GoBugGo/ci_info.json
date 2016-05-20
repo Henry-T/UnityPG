@@ -1,0 +1,12 @@
+{
+    "name":"GoBugGo",
+    "readName":"虫子游戏",
+    "type": "Game",
+    "desc": "一个练手的虫子游戏",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

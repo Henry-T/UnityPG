@@ -1,0 +1,12 @@
+﻿<Config>
+    <WorkingDir>E:/proj/ProjectS/ProjectS/tools/SpineAttachEditor</WorkingDir>
+    <SpineFolder>../../client/trunk/projects/res/spine</SpineFolder>
+    <HeroExcel>../../config/TypeDatas/Hero.xls</HeroExcel>
+    <JsonConvertor>../../config/TypeDatas/SaveToLua.exe</JsonConvertor>
+    <HeroJson>../../config/LuaDatas/HeroConfig.lua</HeroJson>
+    <HeroJsonInClient>../../client/trunk/projects/scripts/app/config/HeroConfig.lua</HeroJsonInClient>
+    <DefaultAnim>monster001_wait</DefaultAnim>
+    <ResWidth>800</ResWidth>
+    <ResHeight>600</ResHeight>
+    <DebugMode>false</DebugMode>
+</Config>

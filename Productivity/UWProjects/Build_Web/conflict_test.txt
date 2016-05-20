@@ -1,0 +1,3 @@
+<<<<<<< .mine
+this is default line (mod by A_2)=======
+this is default line (mod by C)>>>>>>> .r9

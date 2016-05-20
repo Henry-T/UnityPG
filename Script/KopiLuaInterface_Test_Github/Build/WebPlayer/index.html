@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Unity Web Player | WebPlayer</title>
+		<script type="text/javascript" src="http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject.js"></script>
+		<script type="text/javascript">
+		<!--
+		function GetUnity() {
+			if (typeof unityObject != "undefined") {
+				return unityObject.getObjectById("unityPlayer");
+			}
+			return null;
+		}
+		if (typeof unityObject != "undefined") {
+			unityObject.embedUnity("unityPlayer", "WebPlayer.unity3d", 600, 450);
+			
+		}
+		-->
+		</script>
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: white;
+			color: black;
+			text-align: center;
+		}
+		a:link, a:visited {
+			color: #000;
+		}
+		a:active, a:hover {
+			color: #666;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			margin: auto;
+			width: 600px;
+		}
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.missing img {
+			border-width: 0px;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: 450px;
+			width: 600px;
+		}
+		-->
+		</style>
+	</head>
+	<body>
+		<table><tr><td>
+			<p class="header"><span>Unity Web Player | </span>KLITest (Lua Demo)</p>
+			<div class="content">
+				<div id="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+			</div>
+			<p class="footer">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+			<form style="padding-top: 20px">
+				<textarea rows="10" cols="80" id="code">
+-- Initialization - this runs every time the user presses 'Send Code',
+-- so I have protected it against creating more cubes with a nil test.
+if cube == nil then
+	cube = UnityEngine.GameObject.CreatePrimitive(
+		UnityEngine.PrimitiveType.Cube)
+end
+
+-- Useful aliases for later on
+abs = System.Math.Abs
+sin = System.Math.Sin
+sqrt = System.Math.Sqrt
+
+-- The update function is called once per frame
+function update(dt)
+    t = UnityEngine.Time.realtimeSinceStartup
+    y = sin(t)
+    a = sin(1 + 3 * t)
+    r = abs(sin(2 + 1.5 * t))
+    g = abs(sin(3 + 1.6 * t))
+    b = sqrt(1-r*r-g*g)
+
+    cube.transform.position = UnityEngine.Vector3(0, y, -5)
+    cube.transform.rotation = UnityEngine.Quaternion.AngleAxis(60*t, 
+				  UnityEngine.Vector3(a, 1, 0))
+    cube.renderer.material.color = UnityEngine.Color(r, g, b)
+end</textarea>
+				<input type="button" value="Send Code" onclick="GetUnity().SendMessage('controller', 'DoCode', document.getElementById('code').value)" />
+			</form>
+		
+		<td style="text-align:left" valign="top">
+			
+			<h1>KLITest Lua-in-Unity Demo</h1>
+			
+			<p>Edit the Lua code in the text box below the player, 
+			and press the "Send Code" button to submit it.  
+	
+			<p>The script is executed on submission, and if it 
+			defines an "update" function, that gets called once 
+			per frame.
+
+			<h3>Downloads</h3>
+	
+			<ul>
+				<li><a href="KLITest-13362.zip">KLITest-13362.zip</a> - this Unity project
+				<li><a href="../KLI-bin">KLI-bin</a> - precompiled Lua DLLs for use in your own projects
+			</ul>
+
+			<h3>Library source</h3>
+
+			<ul>
+				<li><a href="https://github.com/gfoot/kopiluainterface#kopiluainteface">gfoot/kopiluainterface project page</a>
+				<li>git clone https://github.com/gfoot/kopiluainterface.git
+			</ul>
+
+			<h3>Contact</h3>
+
+			<ul>
+				<li><a href="http://forum.unity3d.com/private.php?do=newpm&u=31538">PM to gfoot at the Unity forums</a>
+			</ul>
+
+		</table>
+	</body>
+</html>

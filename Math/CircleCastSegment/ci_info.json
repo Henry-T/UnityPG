@@ -1,0 +1,12 @@
+{
+    "name":"CircleCastSegment",
+    "readName":"圆-线段检测",
+    "type": "Math",
+    "desc": "圆形投射线段",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

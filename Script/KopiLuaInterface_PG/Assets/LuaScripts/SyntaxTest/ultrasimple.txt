@@ -1,0 +1,4 @@
+#! /usr/bin/lua
+print('1..2')
+print('ok here')
+print('ok again now')

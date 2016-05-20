@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="ConfigEditor.WarriorGrowthUC"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="246" d:DesignWidth="710">
+    <Grid DataContext="{Binding}">
+        <Grid Background="#FFE5E5E5" Margin="0,0,0,0">
+            <Grid HorizontalAlignment="Left" Height="205" Margin="10,10,0,0" VerticalAlignment="Top" Width="690" ShowGridLines="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Content="等级" Grid.Row="0" Grid.Column="1"></Label>
+                <Label Content="阶级" Grid.Row="0" Grid.Column="2"></Label>
+                <Label Content="生命" Grid.Row="0" Grid.Column="3"></Label>
+                <Label Content="攻击" Grid.Row="0" Grid.Column="4"></Label>
+                <Label Content="防御" Grid.Row="0" Grid.Column="5"></Label>
+                <Label Content="速度" Grid.Row="0" Grid.Column="6"></Label>
+                <Label Content="暴击" Grid.Row="0" Grid.Column="7"></Label>
+                <Label Content="爆伤" Grid.Row="0" Grid.Column="8"></Label>
+                <Label Content="连击" Grid.Row="0" Grid.Column="9"></Label>
+                <Label Content="格挡" Grid.Row="0" Grid.Column="10"></Label>
+                <Label Content="反击" Grid.Row="0" Grid.Column="11"></Label>
+
+                <Label Content="成长值" Grid.Row="1" Grid.Column="0"></Label>
+                <Label Content="初始值" Grid.Row="2" Grid.Column="0"></Label>
+                <Label Content="计算值" Grid.Row="3" Grid.Column="0"></Label>
+
+                <TextBox x:Name="tbBaseHP" Grid.Row="1" Grid.Column="3" Text="{Binding BaseHP}"></TextBox>
+                <TextBox x:Name="tbBaseAttack" Grid.Row="1" Grid.Column="4" Text="{Binding BaseAttack}"></TextBox>
+                <TextBox x:Name="tbBaseDefence" Grid.Row="1" Grid.Column="5" Text="{Binding BaseDefence}"></TextBox>
+                <TextBox x:Name="tbBaseSpeed" Grid.Row="1" Grid.Column="6" Text="0" IsEnabled="False"></TextBox>
+                <TextBox x:Name="tbBaseCRate" Grid.Row="1" Grid.Column="7" Text="{Binding BaseCritRate}"></TextBox>
+                <TextBox x:Name="tbBaseCValue" Grid.Row="1" Grid.Column="8" Text="0" IsEnabled="false"></TextBox>
+                <TextBox x:Name="tbBaseCombo" Grid.Row="1" Grid.Column="9" Text="{Binding BaseComboRate}"></TextBox>
+                <TextBox x:Name="tbBaseBlock" Grid.Row="1" Grid.Column="10" Text="{Binding BaseBlockRate}"></TextBox>
+                <TextBox x:Name="tbBaseCounter" Grid.Row="1" Grid.Column="11" Text="{Binding BaseCounterRate}"></TextBox>
+
+                <TextBox x:Name="tbModHP" Grid.Row="2" Grid.Column="3" Text="{Binding HPMod}" PreviewTextInput="PreviewNumberInput" />
+                <TextBox x:Name="tbModAttack" Grid.Row="2" Grid.Column="4" Text="{Binding AttackMod}"></TextBox>
+                <TextBox x:Name="tbModDefence" Grid.Row="2" Grid.Column="5" Text="{Binding DefenceMod}"></TextBox>
+                <!-- Speed 配置名称反了 -->
+                <TextBox x:Name="tbModSpeed" Grid.Row="2" Grid.Column="6" Text="{Binding BaseSpeed}"></TextBox>
+                <TextBox x:Name="tbModCRate" Grid.Row="2" Grid.Column="7" Text="{Binding CritMod}"></TextBox>
+                <!-- 爆伤 配置名称反了 -->
+                <TextBox x:Name="tbModCValue" Grid.Row="2" Grid.Column="8" Text="{Binding BaseCritDamage}"></TextBox>
+                <TextBox x:Name="tbModCombo" Grid.Row="2" Grid.Column="9" Text="{Binding ComboMod}"></TextBox>
+                <TextBox x:Name="tbModBlock" Grid.Row="2" Grid.Column="10" Text="{Binding BlockMod}"></TextBox>
+                <TextBox x:Name="tbModCounter" Grid.Row="2" Grid.Column="11" Text="{Binding CounterMod}"></TextBox>
+
+                <TextBox x:Name="tbLevel" Grid.Row="3" Grid.Column="1" Text="1"></TextBox>
+                <TextBox x:Name="tbGrade" Grid.Row="3" Grid.Column="2" Text="0"></TextBox>
+                <TextBox x:Name="tbFinalHP" Grid.Row="3" Grid.Column="3">
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModHP" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseHP" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text> 
+                </TextBox>
+                <TextBox x:Name="tbFinalAttack" Grid.Row="3" Grid.Column="4">                    
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModAttack" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseAttack" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text> 
+                </TextBox>
+                <TextBox x:Name="tbFinalDefence" Grid.Row="3" Grid.Column="5">
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModDefence" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseDefence" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBox x:Name="tbFinalSpeed" Grid.Row="3" Grid.Column="6" Text="{Binding ElementName=tbModSpeed, Path=Text}">
+                </TextBox>
+                <TextBox x:Name="tbFinalCRate" Grid.Row="3" Grid.Column="7">
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModCRate" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseCRate" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBox x:Name="tbFinalCValue" Grid.Row="3" Grid.Column="8" Text="{Binding ElementName=tbModCValue, Path=Text}">
+                </TextBox>
+                <TextBox x:Name="tbFinalCombo" Grid.Row="3" Grid.Column="9">
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModCombo" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseCombo" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBox x:Name="tbFinalBlock" Grid.Row="3" Grid.Column="10">
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModBlock" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseBlock" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+                <TextBox x:Name="tbFinalCounter" Grid.Row="3" Grid.Column="11">
+                    <TextBox.Text>
+                        <MultiBinding Mode="OneWay" Converter="{StaticResource WarriorSimPropertyConverter}">
+                            <Binding ElementName="tbModCounter" Path="Text"></Binding>
+                            <Binding ElementName="tbBaseCounter" Path="Text"></Binding>
+                            <Binding ElementName="tbLevel" Path="Text"></Binding>
+                            <Binding ElementName="tbGrade" Path="Text"></Binding>
+                        </MultiBinding>
+                    </TextBox.Text>
+                </TextBox>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

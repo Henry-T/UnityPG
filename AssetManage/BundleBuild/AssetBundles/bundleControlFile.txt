@@ -1,0 +1,9 @@
+BundleName:raw.unity3d
+VersionNumber:2
+
+BundleName:reference_x.unity3d
+VersionNumber:2
+
+BundleName:reference_y.unity3d
+VersionNumber:2
+

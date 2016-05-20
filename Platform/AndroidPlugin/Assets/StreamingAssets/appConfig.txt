@@ -1,0 +1,17 @@
+﻿// 本地配置用于改写GSDK配置以及测试
+// 此文件中的配置项拥有最高优先级
+
+// 替换各接口返回的平台账号UID (仅Win测试环境有效)
+TestPlatformUID=0001
+
+// 替换登陆状态码 (仅Win测试环境有效)
+TestLoginStatus=1
+
+// 平台名
+GSDK_PlatformName=aliTV
+
+// 平台ID
+GSDK_PlatformID=1
+
+// 大版本更新测试
+TestHasMainUpgrade=true

@@ -1,0 +1,9 @@
+
+-- Spine Runtime
+059cc69
+2014-08-01
+059cc69a310fe01e30242533fdaccfe943a59723
+https://github.com/EsotericSoftware/spine-runtimes/tree/059cc69a310fe01e30242533fdaccfe943a59723
+
+-- NPOI
+

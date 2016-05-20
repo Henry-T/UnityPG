@@ -1,0 +1,16 @@
+function test()
+	Debug.Log("Hello Lua!")
+	Debug.Log(gameObject.name)
+	--gameObject:SetActive(false)
+end
+
+
+function Update()
+	transform:Rotate(0, 100*Time.deltaTime, 0)
+end
+
+function OnGUI()
+	if (GUI.Button(Rect(0,0, 200, 60), "Random Color")) then
+		gameObject.renderer.material.color = Color(Random.Range(0, 1), Random.Range(0, 1), Random.Range(0, 1));
+	end
+end

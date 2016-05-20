@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D41278BE-11D1-4CE5-854D-EAC87A2547D5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NPOI.SS</RootNamespace>
+    <AssemblyName>NPOI.SS</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>npoi.snk</AssemblyOriginatorKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EncryptedDocumentException.cs" />
+    <Compile Include="Formula\CellCacheEntry.cs" />
+    <Compile Include="Formula\CellEvaluationFrame.cs" />
+    <Compile Include="Formula\CollaboratingWorkbooksEnvironment.cs" />
+    <Compile Include="Formula\EvaluationCache.cs" />
+    <Compile Include="Formula\EvaluationCell.cs" />
+    <Compile Include="Formula\EvaluationName.cs" />
+    <Compile Include="Formula\EvaluationSheet.cs" />
+    <Compile Include="Formula\EvaluationTracker.cs" />
+    <Compile Include="Formula\EvaluationWorkbook.cs" />
+    <Compile Include="Formula\ExternSheetReferenceToken.cs" />
+    <Compile Include="Formula\Formula.cs" />
+    <Compile Include="Formula\FormulaCellCache.cs" />
+    <Compile Include="Formula\FormulaCellCacheEntry.cs" />
+    <Compile Include="Formula\FormulaCellCacheEntrySet.cs" />
+    <Compile Include="Formula\FormulaParser.cs" />
+    <Compile Include="Formula\FormulaParsingWorkbook.cs" />
+    <Compile Include="Formula\FormulaRenderer.cs" />
+    <Compile Include="Formula\FormulaRenderingWorkbook.cs" />
+    <Compile Include="Formula\FormulaType.cs" />
+    <Compile Include="Formula\FormulaUsedBlankCellSet.cs" />
+    <Compile Include="Formula\IEvaluationListener.cs" />
+    <Compile Include="Formula\IStabilityClassifier.cs" />
+    <Compile Include="Formula\LazyAreaEval.cs" />
+    <Compile Include="Formula\LazyRefEval.cs" />
+    <Compile Include="Formula\OperandClassTransformer.cs" />
+    <Compile Include="Formula\OperationEvaluationContext.cs" />
+    <Compile Include="Formula\OperationEvaluatorFactory.cs" />
+    <Compile Include="Formula\ParseNode.cs" />
+    <Compile Include="Formula\PlainCellCache.cs" />
+    <Compile Include="Formula\PlainValueCellCacheEntry.cs" />
+    <Compile Include="Formula\SheetRefEvaluator.cs" />
+    <Compile Include="Formula\UserDefinedFunction.cs" />
+    <Compile Include="Formula\WorkbookDependentFormula.cs" />
+    <Compile Include="Formula\WorkbookEvaluator.cs" />
+    <Compile Include="HSSF\Record\BiffHeaderInput.cs" />
+    <Compile Include="HSSF\Record\BOFRecord.cs" />
+    <Compile Include="HSSF\Record\CellValueRecordInterface.cs" />
+    <Compile Include="HSSF\Record\Constant\ConstantValueParser.cs" />
+    <Compile Include="HSSF\Record\Constant\ErrorConstant.cs" />
+    <Compile Include="HSSF\Record\ContinueRecord.cs" />
+    <Compile Include="HSSF\Record\Cont\ContinuableRecord.cs" />
+    <Compile Include="HSSF\Record\Cont\ContinuableRecordOutput.cs" />
+    <Compile Include="HSSF\Record\Cont\UnknownLengthRecordOutput.cs" />
+    <Compile Include="HSSF\Record\Crypto\Biff8DecryptingStream.cs" />
+    <Compile Include="HSSF\Record\Crypto\Biff8EncryptionKey.cs" />
+    <Compile Include="HSSF\Record\Crypto\Biff8RC4.cs" />
+    <Compile Include="HSSF\Record\Crypto\RC4.cs" />
+    <Compile Include="HSSF\Record\EOFRecord.cs" />
+    <Compile Include="HSSF\Record\FilePassRecord.cs" />
+    <Compile Include="HSSF\Record\Formula\AbstractFunctionPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\AddPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\Area2DPtgBase.cs" />
+    <Compile Include="HSSF\Record\Formula\Area3DPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\AreaErrPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\AreaI.cs" />
+    <Compile Include="HSSF\Record\Formula\AreaNPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\AreaPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\AreaPtgBase.cs" />
+    <Compile Include="HSSF\Record\Formula\ArrayPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\AttrPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\BoolPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ConcatPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ControlPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\DeletedArea3DPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\DeletedRef3DPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\DividePtg.cs" />
+    <Compile Include="HSSF\Record\Formula\EqualPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ErrPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ExpPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ExternSheetNameResolver.cs" />
+    <Compile Include="HSSF\Record\Formula\FormulaShifter.cs" />
+    <Compile Include="HSSF\Record\Formula\FuncPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Npv.cs" />
+    <Compile Include="HSSF\Record\Formula\FuncVarPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\GreaterEqualPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\GreaterThanPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\IntersectionPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\IntPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\LessEqualPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\LessThanPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\MemAreaPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\MemErrPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\MemFuncPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\MissingArgPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\MultiplyPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\NamePtg.cs" />
+    <Compile Include="HSSF\Record\Formula\NameXPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\NotEqualPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\NumberPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\OperandPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\OperationPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ParenthesisPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\PercentPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\PowerPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\Ptg.cs" />
+    <Compile Include="HSSF\Record\Formula\RangePtg.cs" />
+    <Compile Include="HSSF\Record\Formula\Ref2DPtgBase.cs" />
+    <Compile Include="HSSF\Record\Formula\Ref3DPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\RefErrorPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\RefNPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\RefPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\RefPtgBase.cs" />
+    <Compile Include="HSSF\Record\Formula\ScalarConstantPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\SheetNameFormatter.cs" />
+    <Compile Include="HSSF\Record\Formula\StringPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\SubtractPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\TblPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\Udf\AggregatingUDFFinder.cs" />
+    <Compile Include="HSSF\Record\Formula\Udf\DefaultUDFFinder.cs" />
+    <Compile Include="HSSF\Record\Formula\Udf\UDFFinder.cs" />
+    <Compile Include="HSSF\Record\Formula\UnaryMinusPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\UnaryPlusPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\UnionPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\UnknownPtg.cs" />
+    <Compile Include="HSSF\Record\Formula\ValueOperatorPtg.cs" />
+    <Compile Include="HSSF\Record\InterfaceHdrRecord.cs" />
+    <Compile Include="HSSF\Record\Record.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HSSF\Record\RecordBase.cs" />
+    <Compile Include="HSSF\Record\RecordFormatException.cs" />
+    <Compile Include="HSSF\Record\RecordInputStream.cs" />
+    <Compile Include="HSSF\Record\StandardRecord.cs" />
+    <Compile Include="HSSF\Record\UnicodeString.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="HSSF\UserModel\HSSFErrorConstants.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HSSF\Record\Formula\Atp\AnalysisToolPak.cs" />
+    <Compile Include="HSSF\Record\Formula\Atp\ParityFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Atp\YearFrac.cs" />
+    <Compile Include="HSSF\Record\Formula\Atp\YearFracCalculator.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\AreaEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\AreaEvalBase.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\BlankEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\BoolEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\ConcatEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\ErrorEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\Eval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\EvaluationException.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\FunctionEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\MissingArgEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\NameEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\NameXEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\NumberEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\NumericValueEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\OperandResolver.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\PercentEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RangeEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RefEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RefEvalBase.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\EqualEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\GreaterEqualEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\GreaterThanEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\LessEqualEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\LessThanEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\NotEqualEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\RelationalOperationEval\RelationalOperationEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\StringEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\StringValueEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\TwoOperandNumeric\AddEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\TwoOperandNumeric\DivideEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\TwoOperandNumeric\MultiplyEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\TwoOperandNumeric\PowerEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\TwoOperandNumeric\SubtractEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\TwoOperandNumeric\TwoOperandNumericOperation.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\UnaryMinusEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\UnaryPlusEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\ValueEval.cs" />
+    <Compile Include="HSSF\Record\Formula\Eval\ValueEvalToNumericXlator.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\AggregateFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Boolean\And.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Boolean\BooleanFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Boolean\False.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Boolean\Not.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Boolean\Or.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Boolean\True.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\CalendarFieldFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Ceiling.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Choose.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Column.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Columns.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Combin.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Count.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Counta.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Countif.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\CountUtils.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\DateFunc.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Degrees.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Dollar.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Even.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Exp.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fact.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\FinanceFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\FinanceLib.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fixed0ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fixed1ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fixed2ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fixed3ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fixed4ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Floor.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\FreeRefFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Function.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Function0Arg.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Function1Arg.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Function2Arg.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Function3Arg.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Function4Arg.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Fv.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Hlookup.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\If.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Index.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Indirect.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Int.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Isblank.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Iserror.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Islogical.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Isna.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Isnontext.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Isnumber.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Isref.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\Istext.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Logical\LogicalFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Lookup.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\LookupUtils.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Match.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\MathX.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\MinaMaxa.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Mod.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Mode.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\MultiOperandNumericFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Na.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\NotImplementedFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Nper.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Abs.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Acos.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Acosh.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Asin.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Asinh.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Atan.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Atan2.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Atanh.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Cos.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Cosh.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Ln.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Log.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Log10.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\NumericFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Pi.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Rand.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Round.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Rounddown.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Roundup.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Sin.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Sinh.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Sqrt.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Tan.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Numeric\Tanh.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Odd.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Offset.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Pmt.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Power.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Pv.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Radians.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Row.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Rows.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Sign.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\StatsLib.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Sumproduct.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Sumx2my2.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Sumx2py2.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Sumxmy2.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\T.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Concatenate.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Exact.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\LeftRight.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Len.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Lower.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Mid.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Replace.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\SearchFind.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Substitute.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\TextFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Trim.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Text\Upper.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Today.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Value.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Var1or2ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Var2or3ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Var3or4ArgFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\Vlookup.cs" />
+    <Compile Include="HSSF\Record\Formula\Functions\XYNumericFunction.cs" />
+    <Compile Include="HSSF\Record\Formula\Function\FunctionDataBuilder.cs" />
+    <Compile Include="HSSF\Record\Formula\Function\FunctionMetadata.cs" />
+    <Compile Include="HSSF\Record\Formula\Function\FunctionMetadataReader.cs" />
+    <Compile Include="HSSF\Record\Formula\Function\FunctionMetadataRegistry.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SpreadsheetVersion.cs" />
+    <Compile Include="UserModel\BorderStyle.cs" />
+    <Compile Include="UserModel\Cell.cs" />
+    <Compile Include="UserModel\CellStyle.cs" />
+    <Compile Include="UserModel\CellValue.cs" />
+    <Compile Include="UserModel\ClientAnchor.cs" />
+    <Compile Include="UserModel\Comment.cs" />
+    <Compile Include="UserModel\CreationHelper.cs" />
+    <Compile Include="UserModel\DataFormat.cs" />
+    <Compile Include="UserModel\DataFormatter.cs" />
+    <Compile Include="UserModel\DateUtil.cs" />
+    <Compile Include="UserModel\Drawing.cs" />
+    <Compile Include="UserModel\ErrorConstants.cs" />
+    <Compile Include="UserModel\FillPatternType.cs" />
+    <Compile Include="UserModel\Font.cs" />
+    <Compile Include="UserModel\FontCharset.cs" />
+    <Compile Include="UserModel\FontFamily.cs" />
+    <Compile Include="UserModel\FontScheme.cs" />
+    <Compile Include="UserModel\FontUnderline.cs" />
+    <Compile Include="UserModel\Footer.cs" />
+    <Compile Include="UserModel\FormulaError.cs" />
+    <Compile Include="UserModel\FormulaEvaluator.cs" />
+    <Compile Include="UserModel\Header.cs" />
+    <Compile Include="UserModel\HeaderFooter.cs" />
+    <Compile Include="UserModel\HorizontalAlignment.cs" />
+    <Compile Include="UserModel\Hyperlink.cs" />
+    <Compile Include="UserModel\IndexedColors.cs" />
+    <Compile Include="UserModel\Name.cs" />
+    <Compile Include="UserModel\PageOrder.cs" />
+    <Compile Include="UserModel\PaperSize.cs" />
+    <Compile Include="UserModel\Picture.cs" />
+    <Compile Include="UserModel\PictureData.cs" />
+    <Compile Include="UserModel\PrintCellComments.cs" />
+    <Compile Include="UserModel\PrintOrientation.cs" />
+    <Compile Include="UserModel\PrintSetup.cs" />
+    <Compile Include="UserModel\RichTextString.cs" />
+    <Compile Include="UserModel\Row.cs" />
+    <Compile Include="UserModel\Shape.cs" />
+    <Compile Include="UserModel\ShapeTypes.cs" />
+    <Compile Include="UserModel\Sheet.cs" />
+    <Compile Include="UserModel\Textbox.cs" />
+    <Compile Include="UserModel\VerticalAlignment.cs" />
+    <Compile Include="UserModel\Workbook.cs" />
+    <Compile Include="Util\AreaReference.cs" />
+    <Compile Include="Util\CellRangeAddress.cs" />
+    <Compile Include="Util\CellRangeAddress8Bit.cs" />
+    <Compile Include="Util\CellRangeAddressBase.cs" />
+    <Compile Include="Util\CellRangeAddressList.cs" />
+    <Compile Include="Util\CellReference.cs" />
+    <Compile Include="Util\Format.cs" />
+    <Compile Include="Util\IEEEDouble.cs" />
+    <Compile Include="Util\PaneInformation.cs" />
+    <Compile Include="Util\Region.cs" />
+    <Compile Include="Util\SheetReferences.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\util\Util.csproj">
+      <Project>{ECCBDFDC-E8DF-4C13-8BC3-2457504EA9F0}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="npoi.snk" />
+    <None Include="Resources\font_metrics.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resource1.resx">
+      <SubType>Designer</SubType>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\functionMetadata.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

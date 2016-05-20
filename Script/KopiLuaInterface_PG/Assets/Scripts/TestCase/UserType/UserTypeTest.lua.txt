@@ -1,0 +1,47 @@
+UnityEngine		= luanet.UnityEngine
+Debug			= UnityEngine.Debug
+
+-- TEST CASE [Failed] LuaInterface风格程序集与类导入 可能是语法问题
+--UserAssembly	= luanet.load_assembly "Assembly-CSharp"
+--MyStatic 		= luanet.import_type "Assembly-CSharp.MyStatic"
+--MyStatic 		= luanet.import_type "MyStatic"
+
+-- TEST CASE [OK] KopiLuaInterface风格程序集与类导入
+luanet.load_assembly("Assembly-CSharp")
+MyStatic 		= luanet.MyStatic
+MyInstance  	= luanet.MyInstance
+
+-- TEST CASE [OK] 实例成员无需导入的确认测试
+-- None
+function Awake()
+	Debug.Log("========= UserType Test ========")
+
+	-- TEST CASE [OK] 实例属性读访问 / 实例方法调用
+	--Debug.Log(myInstance.Name)
+	--myInstance:TestFunc()
+
+	-- TEST CASE [OK] 非静态类的静态方法
+	--MyInstance.StaticFunc()
+
+	-- TEST CASE [OK] 静态类的静态方法
+	MyStatic.TestFunc()
+
+	-- TEST CASE [OK] 静态属性访问
+	--Debug.Log(MyStatic.info)
+
+	-- TEST CASE [OK] 用实例包装静态属性和静态方法 | 属性写操作
+	--myStaticWrap.MyStaticNote = "MyStaticNote Mod by Lua"	-- TEST CASE Property读写测试成功
+	--Debug.Log(myStaticWrap.MyStaticNote);
+	--myStaticWrap:MyStaticTestFunc();
+	---myStaticWrap:MyInstanceStaticFunc();
+
+	Debug.Log("--------- UserType Test End ---------");
+end
+
+function Update()
+	--if not (GlobalVar.Character == nil) then
+		--gameObject.name = "132412414"
+		-- Debug.Log("Global Var accessed from lua!")
+
+	--end
+end

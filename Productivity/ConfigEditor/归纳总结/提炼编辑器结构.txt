@@ -1,0 +1,9 @@
+提炼编辑器结构
+- ConfigType
+- ConfigEditor
+- SpineRenderer
+
+Unity里的NamedPipelineClient Connect似乎没有实现timeout，设置了也没用
+
+
+copy $(TargetPath) $(SolutionDir)SpineRenderer\Assets\Lib\$(TargetFileName)

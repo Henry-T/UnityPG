@@ -1,0 +1,12 @@
+{
+    "name":"Transparent",
+    "readName":"透明Shader性能测试",
+    "type": "Performance",
+    "desc": "测试各种混合模式在移动设备上的表现",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

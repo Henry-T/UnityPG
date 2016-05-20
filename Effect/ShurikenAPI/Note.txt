@@ -1,0 +1,2 @@
+ParticleSystem.enableEmittion = false;
+的直接结果是将粒子的emittion复选框勾去

@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.ClipEvent.CSharp", "UnityVS.ClipEvent.CSharp.csproj", "{670EA509-2515-203E-0C92-8067BDD71735}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.ClipEvent.CSharp.Editor", "UnityVS.ClipEvent.CSharp.Editor.csproj", "{E87CBF7E-CC37-2241-0A1E-DC5396553A19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{670EA509-2515-203E-0C92-8067BDD71735}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{670EA509-2515-203E-0C92-8067BDD71735}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{670EA509-2515-203E-0C92-8067BDD71735}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{670EA509-2515-203E-0C92-8067BDD71735}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E87CBF7E-CC37-2241-0A1E-DC5396553A19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E87CBF7E-CC37-2241-0A1E-DC5396553A19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E87CBF7E-CC37-2241-0A1E-DC5396553A19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E87CBF7E-CC37-2241-0A1E-DC5396553A19}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

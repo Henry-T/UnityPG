@@ -1,0 +1,12 @@
+{
+    "name":"ModelPreprocess",
+    "readName": "模型预处理器",
+    "type": "Resource",
+    "desc": "模型加载预处理",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

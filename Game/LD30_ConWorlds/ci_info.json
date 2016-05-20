@@ -1,0 +1,12 @@
+{
+    "name":"LD30_ConWorlds",
+    "readName":"重叠世界的建筑师",
+    "type": "Game",
+    "desc": "LD30参赛作品\n**介绍**这是一个解密游戏，使用各种图块建立蓝图所要求的建筑物。游戏特色在于屏幕两边是两个不同的世界，一些物体在进入对面世界时会变得不一样。\n**提示**:有一个相对严重的砖块层叠错误，可能导致无法完成关卡，在我解决这个bug之前，你可能需要在卡关时多点点拽拽那些砖块，或者刷新页面选别的关卡玩。",
+    "status": "未编译",
+    "update": "LD30提交",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

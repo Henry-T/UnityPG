@@ -1,0 +1,9 @@
+BundleName:raw.unity3d
+NumberOfAssets:1
+banner.png
+BundleName:reference_x.unity3d
+NumberOfAssets:1
+RefObj_X.prefab
+BundleName:reference_y.unity3d
+NumberOfAssets:1
+RefObj_Y.prefab

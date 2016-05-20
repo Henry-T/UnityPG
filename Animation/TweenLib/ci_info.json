@@ -1,0 +1,12 @@
+{
+    "name":"TweenLib",
+    "readName":"各TweenLib综合测试",
+    "type": "Animation",
+    "desc": "热门Tween库对比测试,iTween HOTween LeanTween",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com",
+}

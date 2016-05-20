@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.lolofinil.androidplugin" android:versionName="1.0" android:versionCode="1" android:installLocation="preferExternal">
+  <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
+  <application android:theme="@android:style/Theme.NoTitleBar" android:icon="@drawable/app_icon" android:label="@string/app_name">
+    <activity android:name="com.lolofinil.androidplugin.AndroidPluginActivity" android:label="@string/app_name" android:screenOrientation="fullSensor" android:launchMode="singleTask" android:configChanges="mcc|mnc|locale|touchscreen|keyboard|keyboardHidden|navigation|orientation|screenLayout|uiMode|screenSize|smallestScreenSize|fontScale">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+        <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+      </intent-filter>
+      <meta-data android:name="unityplayer.UnityActivity" android:value="true" />
+      <meta-data android:name="unityplayer.ForwardNativeEventsToDalvik" android:value="false" />
+    </activity>
+    
+           
+    <activity
+        android:name="com.apowo.gamesdk.activity.LoginActivity"
+        android:label="@string/title_activity_login"
+        android:theme="@android:style/Theme.Dialog" >
+    </activity>
+    <activity
+        android:name="com.apowo.gamesdk.activity.RegistActivity"
+        android:label="@string/title_activity_regist"
+        android:theme="@android:style/Theme.Dialog" >
+    </activity>
+    <activity
+        android:name="com.apowo.gamesdk.activity.RestorePassActivity"
+        android:label="@string/title_activity_change_pass" 
+        android:theme="@android:style/Theme.Dialog" >
+    </activity>
+    
+	<meta-data android:name="GSDK_GameID" android:value="\ 5" />
+	<meta-data android:name="GSDK_GameName" android:value="猪猪特攻队" />
+	<meta-data android:name="GSDK_AuthKey" android:value="b91d12adf38b1a2c446579b64e7c5a7c" />
+	<meta-data android:name="GSDK_PayKey" android:value="d52402e541ea21e460552176b6a8a2d5" />
+	
+	<meta-data android:name="VoginsPAY_CHANNEL_ID" android:value="\ 30054"/>
+	<meta-data android:name="VoginsPAY_APP_ID" android:value="\ 117951399"/>
+			
+	<meta-data android:name="GSDK_ChannelID" android:value="\ 1" />
+	<meta-data android:name="GSDK_ChannelName" android:value="aliTV" />
+	
+  </application>
+  <uses-sdk android:minSdkVersion="13" android:targetSdkVersion="23" />
+  <uses-feature android:glEsVersion="0x00020000" />
+  <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
+  <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>  
+  <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>  
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>  
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>  
+  <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+</manifest>

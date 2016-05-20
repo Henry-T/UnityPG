@@ -1,0 +1,113 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:ConfigEditor" x:Class="ConfigEditor.SkillEditWindow"
+        Title="SkillEditWindow" Height="768" Width="1024" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="dgSkills" HorizontalAlignment="Left" ItemsSource="{Binding}" Margin="10,58,0,0" VerticalAlignment="Top" Height="348" Width="996" AutoGenerateColumns="False" CanUserAddRows="False" CanUserSortColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Type" Binding="{Binding ID}" />
+                <DataGridTextColumn Header="技能名" Binding="{Binding Name}" />
+                <DataGridTemplateColumn Header="技能图标">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_PickSkillIcon">
+                                <Image Source="{Binding Path=Code, Converter={StaticResource Code2SkillThumbnailConverter}}"></Image>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="技能描述">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditDesc">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTextColumn Header="技能CD" Binding="{Binding CoolDown}" />
+                <DataGridComboBoxColumn Header="目标组"  TextBinding="{Binding Target}" ItemsSource="{Binding Source={local:Enumeration {x:Type local:ESkillTarget}}}" />
+                <DataGridTextColumn Header="目标数量" Binding="{Binding TargetCount}"/>
+                <DataGridComboBoxColumn Header="选择规则" TextBinding="{Binding SelectRule}" ItemsSource="{Binding Source={local:Enumeration {x:Type local:ESkillSelectRule}}}" />
+                <DataGridComboBoxColumn Header="是否主动" TextBinding="{Binding SkillSubtype}" ItemsSource="{Binding Source={local:Enumeration {x:Type local:ESkillSubtype}}}" />
+                <DataGridTemplateColumn Header="功能效果">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditSkillFunction">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="被动触发条件">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_EditCondition">编辑</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="删除">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="onBtn_DeleteSkill">删除</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TabControl x:Name="tcDetail" HorizontalAlignment="Left" Height="287" Margin="10,411,0,0" VerticalAlignment="Top" Width="996"  Background="#FFE5E5E5">
+            <TabItem Header="功能效果">
+                <Grid>
+                    <Label Content="效果综述" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <DataGrid RowHeight="32" x:Name="lsbFunctions" HorizontalAlignment="Left" Height="180" Margin="10,42,0,0" VerticalAlignment="Top" Width="632"  ItemsSource="{Binding Mode=OneWay, ElementName=dgSkills, Path=SelectedItem.Functions, Converter={StaticResource Json2SkillFunctionsConverter}}"  SelectionChanged="lsbFunctions_SelectionChanged" CanUserAddRows="False"  CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="描述" Width="540" Binding="{Binding Converter={StaticResource SkillFunction2FormatDescConverter}}" />
+                            <DataGridTemplateColumn Header="删除">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="删除" Click="onBtn_DeleteFunction" Width="80"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Button Content="添加" HorizontalAlignment="Left" Margin="286,231,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_AddFunction"/>
+                    <Label Content="效果修改" HorizontalAlignment="Left" Margin="651,10,0,0" VerticalAlignment="Top"/>
+                    <StackPanel x:Name="spFunctionParams" HorizontalAlignment="Right" Margin="0,42,10,38" Width="329" Background="#eeeeee" DataContext="{Binding SelectedItem, ElementName=lsbFunctions}"/>
+                    <Button Content="保存技能效果" HorizontalAlignment="Left" Margin="709,231,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_SaveFunctions"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="触发条件">
+                <Grid DataContext="{Binding}">
+                    <Label Content="条件综述" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                    <DataGrid x:Name="lsbConditions" RowHeight="32" HorizontalAlignment="Left" Height="180" Margin="10,42,0,0" VerticalAlignment="Top" Width="632" ItemsSource="{Binding ElementName=dgSkills, Path=SelectedItem.Conditions, Converter={StaticResource Json2SkillConditionsConverter}}" SelectionChanged="lsbConditions_SelectionChanged" CanUserAddRows="False"  CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="描述" Width="540" Binding="{Binding Converter={StaticResource SkillCondition2FormatDescConverter}}" />
+                            <DataGridTemplateColumn>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Content="删除" Click="onBtn_DeleteCondition" Width="80"></Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    
+                    <Label Content="效果修改" HorizontalAlignment="Left" Margin="651,10,0,0" VerticalAlignment="Top"/>
+                    <Button Content="添加" HorizontalAlignment="Left" Margin="286,231,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_AddCondition"/>
+                    <StackPanel x:Name="spConditionParams" HorizontalAlignment="Right" Margin="0,42,10,38" Width="329" Background="#eeeeee" DataContext="{Binding ElementName=lsbConditions, Path=SelectedItem}">
+                    </StackPanel>
+                    <Button Content="保存触发条件" HorizontalAlignment="Left" Margin="709,231,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_SaveConditions"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="技能描述">
+                <Grid>
+                    <TextBox x:Name="tbDescription"  AcceptsReturn="false" HorizontalAlignment="Left" Height="194" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="690" Text="{Binding SelectedItem.Description, ElementName=dgSkills}" />
+                    <Label HorizontalAlignment="Left" Margin="70,209,0,0" VerticalAlignment="Top" Content="{Binding Text.Length, ElementName=tbDescription}"/>
+                    <Label Content="当前字数: " HorizontalAlignment="Left" Margin="10,209,0,0" VerticalAlignment="Top"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnSave" Content="保存" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="75" Click="btnSave_Click"/>
+        <Button x:Name="btnNewSkill" Content="新技能" HorizontalAlignment="Left" Margin="90,34,0,0" VerticalAlignment="Top" Width="75" Click="btnNewSkill_Click"/>
+        <local:EditorSwitchUC HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Top" Width="1024" Height="24"/>
+        <local:IDJumperUC x:Name="ucIDJumper" HorizontalAlignment="Left" Margin="797,24,0,0" VerticalAlignment="Top" OnJump="ucIDJumper_OnJump" />
+    </Grid>
+</Window>

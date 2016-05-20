@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.KopiLuaInterface_Src_Test.CSharp", "UnityVS.KopiLuaInterface_Src_Test.CSharp.csproj", "{79E667E7-FE13-FEDC-04BB-6B923D338AB2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.KopiLuaInterface_Src_Test.CSharp.Editor", "UnityVS.KopiLuaInterface_Src_Test.CSharp.Editor.csproj", "{C50E61A3-49FB-8416-317E-5ABA79CBF91A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{79E667E7-FE13-FEDC-04BB-6B923D338AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79E667E7-FE13-FEDC-04BB-6B923D338AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79E667E7-FE13-FEDC-04BB-6B923D338AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79E667E7-FE13-FEDC-04BB-6B923D338AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C50E61A3-49FB-8416-317E-5ABA79CBF91A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C50E61A3-49FB-8416-317E-5ABA79CBF91A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C50E61A3-49FB-8416-317E-5ABA79CBF91A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C50E61A3-49FB-8416-317E-5ABA79CBF91A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

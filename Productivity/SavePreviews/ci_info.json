@@ -1,0 +1,12 @@
+{
+    "name":"SavePreviews",
+    "readName":"批量导出缩略图",
+    "type": "Productivity",
+    "desc": "缩略图导出",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

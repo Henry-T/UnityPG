@@ -1,0 +1,11 @@
+--常用函数定义
+
+--输出日志
+function Print(str)
+    Debug.Log(str);
+end
+
+--查找对象
+function Find(str)
+	return GameObject.Find(str);
+end

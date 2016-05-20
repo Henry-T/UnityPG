@@ -1,0 +1,12 @@
+{
+    "name":"AssetValid",
+    "readName": "资源校验工具",
+    "type": "Resource",
+    "desc": "根据一些通用的资源格式规定，对其进行检验",
+    "status": "未编译",
+    "update": "2014-06-11 初始版本",
+    "urlWeb": "www.baidu.com",
+    "urlWin": "www.baidu.com",
+    "urlAndroid": "www.baidu.com",
+    "urlIOS": "www.baidu.com"
+}

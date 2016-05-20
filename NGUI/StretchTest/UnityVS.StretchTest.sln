@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.StretchTest.CSharp", "UnityVS.StretchTest.CSharp.csproj", "{945CF027-94D5-F749-D609-D4A65CF9317B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnityVS.StretchTest.CSharp.Editor", "UnityVS.StretchTest.CSharp.Editor.csproj", "{C159ACF2-A4E5-EB5F-A1F0-AB20591C3E39}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{945CF027-94D5-F749-D609-D4A65CF9317B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{945CF027-94D5-F749-D609-D4A65CF9317B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{945CF027-94D5-F749-D609-D4A65CF9317B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{945CF027-94D5-F749-D609-D4A65CF9317B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C159ACF2-A4E5-EB5F-A1F0-AB20591C3E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C159ACF2-A4E5-EB5F-A1F0-AB20591C3E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C159ACF2-A4E5-EB5F-A1F0-AB20591C3E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C159ACF2-A4E5-EB5F-A1F0-AB20591C3E39}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+读取资源文件问题
+- 读取解析json atlas文本 [OK]
+- 加载Texture2D, 没有问题，因为Editor方式中Import没起什么作用
+- 自行管理资源，AssetDatabase，可以用Resource，LoadFromFile之类的
+http://answers.unity3d.com/questions/432655/loading-texture-file-from-pngjpg-file-on-disk.html
+
+编辑问题
+Excel 查 是否有当前项的记录，有的话提取出三个挂点
+在视图窗口显示三个标记物
+标记物可以拖拽，做个简单的属性格对其进行命名
+目前标记物不支持添加和删除，强制3个
+编辑器配置中，可以指定哪些节点是必须的，以便在保存时弹提示警告
+
+导出问题
+Excel 增(删)改 检查文件中是否有对应Key的记录，如果有，则更新特定项
+http://www.jb51.net/article/42696.htm
+
+运行时问题
+做个简单的Demo 调用接口，指定一个角色对象、一个特效名称和特效挂点，将特效显示到相应的位置上
+
+
+
+读取并解析Cell中的Json
+
+Simple Json
+http://wiki.unity3d.com/index.php/SimpleJSON
+
+http://json.org/

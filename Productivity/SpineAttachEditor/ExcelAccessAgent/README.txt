@@ -1,0 +1,1 @@
+Mono2对Excel库的支持较差，因此单独做个ExcelAccessAgent来代替Unity操作Excel。

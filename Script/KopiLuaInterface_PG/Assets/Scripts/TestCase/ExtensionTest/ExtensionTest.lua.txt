@@ -1,0 +1,21 @@
+UnityEngine		= luanet.UnityEngine
+Debug			= UnityEngine.Debug
+
+luanet.load_assembly("Assembly-CSharp")
+ExtensionClass	= luanet.ExtensionClass
+EmptyClass 		= luanet.EmptyClass
+
+function Awake()
+	Debug.Log("========= Extension Method Test ========")
+
+	-- TEST CASE [Failed] 常规扩展方法调用
+	--emptyClassInstance.ExtensionFunc()
+
+	-- TEST CASE [OK] 扩展方法静态调用
+	ExtensionClass.ExtensionFunc(emptyClassInstance)
+
+	Debug.Log("--------- Extension Method End ---------");
+end
+
+function Update()
+end

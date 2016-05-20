@@ -1,0 +1,10 @@
+Bip001 Pelvis
+Bip001 R Thigh
+Bip001 L Thigh
+Bip001 Spine
+Bip001 Tail
+Bip001 Tail1
+Bip001 R Calf
+Bip001 L Calf
+L_side01
+R_side01

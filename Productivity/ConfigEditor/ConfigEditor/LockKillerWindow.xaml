@@ -1,0 +1,13 @@
+﻿<Window x:Class="ConfigEditor.LockKillerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LockKillerWindow" Height="300" Width="448">
+    <Grid >
+        <Image HorizontalAlignment="Left" Height="100" Margin="318,71,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label Content="你的文件被占用了：" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" />
+        <Label x:Name="lbLockFile" Content="12312331.txt" HorizontalAlignment="Left" Margin="10,57,0,0" VerticalAlignment="Top"/>
+        <Button Content="干掉它们!" HorizontalAlignment="Left" Margin="228,240,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_Confirm"/>
+        <Button Content="不用,谢谢" HorizontalAlignment="Left" Margin="318,240,0,0" VerticalAlignment="Top" Width="75" Click="onBtn_Cancel"/>
+        <Image HorizontalAlignment="Left" Height="197" Margin="306,38,-150,0" VerticalAlignment="Top" Width="284" Source="pirate.png"/>
+    </Grid>
+</Window>

@@ -1,0 +1,10 @@
+通过在MSDN上查看ListView的成员列表。很容易发现要获取显示出来的列表项控件集合实际上是通过ItemContainerGenerator这个属性。从名字上很容易看出来，项容器生成器。这样就可以得到一个ListView生成成列表后的容器控件集合。然后通过 ContainerFromIndex方法和ContainerFromItem就可以获得单项的项控件。
+
+
+
+Dispatcher processing has been suspended, but messages are still being processed.
+
+Dispatcher processing has been suspended, but messages are still being 
+
+
+整数 浮点数 转 字节

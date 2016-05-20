@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EF33273D-BB36-43C6-A638-6FE0F5DF3ED9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NPOI.POIFS</RootNamespace>
+    <AssemblyName>NPOI.POIFS</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>npoi.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\NPOI.POIFS.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\NPOI.POIFS.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'NPOI.Tools|AnyCPU' ">
+    <OutputPath>bin\NPOI.Tools\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\POIFSConstants.cs" />
+    <Compile Include="Dev\POIFSLister.cs" />
+    <Compile Include="Dev\POIFSViewable.cs" />
+    <Compile Include="Dev\POIFSViewEngine.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\BATManaged.cs" />
+    <Compile Include="FileSystem\CloseIgnoringInputStream.cs" />
+    <Compile Include="FileSystem\DirectoryEntry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\DirectoryNode.cs" />
+    <Compile Include="FileSystem\DocumentEntry.cs" />
+    <Compile Include="FileSystem\POIFSDocumentReader.cs" />
+    <Compile Include="FileSystem\DocumentNode.cs" />
+    <Compile Include="FileSystem\POIFSDocumentWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\Entry.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\EntryNode.cs" />
+    <Compile Include="FileSystem\OfficeXmlFileException.cs" />
+    <Compile Include="FileSystem\POIFSDocument.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FileSystem\POIFSDocumentPath.cs" />
+    <Compile Include="FileSystem\POIFSFileSystem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Property\Child.cs" />
+    <Compile Include="Property\DirectoryProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Property\DocumentProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Property\Parent.cs" />
+    <Compile Include="Property\Property.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Property\PropertyConstants.cs" />
+    <Compile Include="Property\PropertyFactory.cs" />
+    <Compile Include="Property\PropertyTable.cs" />
+    <Compile Include="Property\RootProperty.cs" />
+    <Compile Include="Storage\BATBlock.cs" />
+    <Compile Include="Storage\BigBlock.cs" />
+    <Compile Include="Storage\BlockAllocationTableReader.cs" />
+    <Compile Include="Storage\BlockAllocationTableWriter.cs" />
+    <Compile Include="Storage\BlockList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Storage\BlockListImpl.cs" />
+    <Compile Include="Storage\BlockWritable.cs" />
+    <Compile Include="Storage\DocumentBlock.cs" />
+    <Compile Include="Storage\HeaderBlockConstants.cs" />
+    <Compile Include="Storage\HeaderBlockReader.cs" />
+    <Compile Include="Storage\HeaderBlockWriter.cs" />
+    <Compile Include="Storage\ListManagedBlock.cs" />
+    <Compile Include="Storage\PropertyBlock.cs" />
+    <Compile Include="Storage\RawDataBlock.cs" />
+    <Compile Include="Storage\RawDataBlockList.cs" />
+    <Compile Include="Storage\SmallBlockTableReader.cs" />
+    <Compile Include="Storage\SmallBlockTableWriter.cs" />
+    <Compile Include="Storage\SmallDocumentBlock.cs" />
+    <Compile Include="Storage\SmallDocumentBlockList.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\util\Util.csproj">
+      <Project>{ECCBDFDC-E8DF-4C13-8BC3-2457504EA9F0}</Project>
+      <Name>Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Dev\POIFSViewer.cs" />
+    <Compile Include="EventFileSystem\POIFSReader.cs" />
+    <Compile Include="EventFileSystem\POIFSReaderEvent.cs" />
+    <Compile Include="EventFileSystem\POIFSReaderEventArgs.cs" />
+    <Compile Include="EventFileSystem\POIFSReaderListener.cs" />
+    <Compile Include="EventFileSystem\POIFSReaderRegistry.cs" />
+    <Compile Include="EventFileSystem\POIFSWriterEvent.cs" />
+    <Compile Include="EventFileSystem\POIFSWriterEventArgs.cs" />
+    <Compile Include="EventFileSystem\POIFSWriterListener.cs" />
+    <Compile Include="FileSystem\DocumentDescriptor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="npoi.snk" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,15 @@
+function Start()
+	Debug.Log("test2 lua哒哒哒 Start");
+	Print(gameObject.name);
+	transform.localPosition = Vector3(-100,0,0);
+	gameObject:AddComponent("BoxCollider");
+	--transform.localScale = Vector3(2, 2,2);
+end
+
+function Update()
+	transform:RotateAround(Vector3.zero, Vector3.up,20 * Time.deltaTime);
+end
+
+function OnGUI()
+	GUI.Button(Rect(10,10,100,100),"button");
+end
